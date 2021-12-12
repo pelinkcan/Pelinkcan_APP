@@ -1,18 +1,4 @@
-<header class="container-fluid bg-light w-100">
-   <div class="row">
-      <div class="header col-5">
-         <%= link_to links_path do %>
-         <%= image_tag 'pelinkcan.png' %>
-         <% end %>
-      </div>
-      <div class="header col-6">
-         <button type="button" class="btn btn-info"><%= link_to 'リンク作成',new_link_path %></button>
-      </div>
-      <div class="header col-1">
-
-      </div>
-   </div>
-</header>
+<%= render "layouts/header" %>
 <main class="link-main">
    <% @links.each do |l| %>
    <div class="box" style="border: solid 2px <%= l.color %>">
