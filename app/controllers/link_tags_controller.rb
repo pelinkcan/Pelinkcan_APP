@@ -1,0 +1,2 @@
+class LinkTagsController < ApplicationController
+end

@@ -1,0 +1,27 @@
+<!---後で部分テンプレートにする-->
+<header class="container-fluid bg-light w-100">
+    <div class="row">
+       <div class="header col-5"> 
+        <%= link_to links_path do %>
+         <%= image_tag 'pelinkcan.png' %>
+        <% end %>
+       </div>
+       <div class="header col-1">
+       </div>
+    </div>  
+</header>
+<!---ここまで-->
+<main>
+   <div class="profile_image"><%= attachment_image_tag @user, :image, size: "400x400", fallback: "no_image.jpg"%></div>
+   <div class="user_information">
+      <ul>
+          <!---テーブルタグ使う--->
+         <li class="name">名前</li>
+         <li><%= current_user.name %></li>
+         <li class="name">メールアドレス</li>
+         <li><%= current_user.email %></li>
+         <li class="name">パスワード</li>
+         <li><%= link_to "パスワードの再設定を行う場合はこちらから",new_user_password_path %><li>
+      </ul>
+   </div>
+</main>
