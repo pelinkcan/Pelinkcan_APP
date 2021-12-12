@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_01_090621) do
+ActiveRecord::Schema.define(version: 2021_12_12_131340) do
 
   create_table "homes", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2021_11_01_090621) do
   end
 
   create_table "link_tags", force: :cascade do |t|
+    t.integer "tag_id"
+    t.integer "link_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -27,6 +29,13 @@ ActiveRecord::Schema.define(version: 2021_11_01_090621) do
     t.string "url"
     t.string "title"
     t.string "body"
+    t.string "color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
     t.string "color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
