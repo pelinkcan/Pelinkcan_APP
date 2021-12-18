@@ -10,8 +10,8 @@
 
   <!--jsファイルにとばす-->
 
-  <div id="colortag_<%= @linktags.color %>">
-    <%= render partial: 'likes/like', locals: { blog: blog} %>
+  <div id="colortag_<%= @linktag.color %>">
+    <%= render: 'links/link', linktag: @linktag %>
   </div>
 
   <!--ここまで-->
