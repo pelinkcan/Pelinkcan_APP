@@ -1,0 +1,29 @@
+<%= form_with model:@link, local:true do |f| %>
+<ul>
+  <li class="name"><%= f.label :name, 'タイトル' %></li>
+  <li><%= f.text_field :title, class: "hoge", size: "60x10"%></li>
+  <li class="name"><%= f.label :name, 'URL' %></li>
+  <li><%= f.text_field :url, class: "hoge", size: "60x10" %></li>
+  <li class="name"><%= f.label :name, 'メモ' %></li>
+  <li><%= f.text_area :body, class: "hoge", size: "60x5" %></li>
+
+
+  <!--jsファイルにとばす-->
+
+  <div id="colortag_<%= @linktags.color %>">
+    <%= render partial: 'likes/like', locals: { blog: blog} %>
+  </div>
+
+  <!--ここまで-->
+
+  <%= form_with model:@linktag do |f| %>
+  <li class="name"><%= f.label :name, 'color' %></li>
+  <li><%= f.color_field :color%></li>
+  <p></p>
+  <%= f.submit "送信" ,class:"btn btn-secondary"%>
+  <%end%>
+
+  </li>
+  <li class="name"><%= f.submit "リンク作成" ,class:"btn btn-secondary"%></li>
+</ul>
+<% end %>

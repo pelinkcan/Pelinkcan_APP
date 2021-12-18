@@ -5,6 +5,9 @@ class LinksController < ApplicationController
     
     def new
       @link = Link.new
+      @linktag = LinkTag.new
+      @linktags = LinkTag.all
+
     end
     
     def create
