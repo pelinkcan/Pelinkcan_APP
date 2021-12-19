@@ -10,8 +10,13 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+
+ *= require select2
+ *= require select2-bootstrap
+ 
  *= require_tree .
  *= require_self
+
  */
 @import "bootstrap";
 
@@ -23,15 +28,15 @@
     margin-right:auto;
 }
 
-.box{
-    margin-top:60px;
-    margin-left:30px;
-    padding: 2.5% 0;
-    display: inline-block;
-    flex-direction: row;
-    flex-wrap: wrap;
-    border: 1px solid;
-    border-radius: 8px;
-    width:340px;
-    border-color:pink;
-}
+// .box{
+//     margin-top:60px;
+//     margin-left:30px;
+//     padding: 2.5% 0;
+//     display: inline-block;
+//     flex-direction: row;
+//     flex-wrap: wrap;
+//     border: 1px solid;
+//     border-radius: 8px;
+//     width:340px;
+//     border-color:pink;
+// }

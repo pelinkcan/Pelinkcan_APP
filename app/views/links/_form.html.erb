@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/assets/new_form.scss"/>
 <%= form_with model:@link, local:true do |f| %>
 <ul>
   <li class="name"><%= f.label :name, 'タイトル' %></li>
@@ -7,23 +8,20 @@
   <li class="name"><%= f.label :name, 'メモ' %></li>
   <li><%= f.text_area :body, class: "hoge", size: "60x5" %></li>
 
-
-  <!--jsファイルにとばす-->
-
-  <div id="colortag_<%= @linktag.color %>">
-    <%= render: 'links/link', linktag: @linktag %>
-  </div>
-
   <!--ここまで-->
-
-  <%= form_with model:@linktag do |f| %>
-  <li class="name"><%= f.label :name, 'color' %></li>
-  <li><%= f.color_field :color%></li>
-  <p></p>
-  <%= f.submit "送信" ,class:"btn btn-secondary"%>
-  <%end%>
-
+  <li>
+    <%= f.fields_for :link_tag do |c| %>
+        タグ<br>
+        <%= c.select :tag_id, options_for_select(Tag.all.map{|t| [t.name,t.id]},{ :selected => 1 }), { include_hidden: false }, { class: 'tag_select', multiple: true }%>
+    <%end%>
   </li>
+  
+
   <li class="name"><%= f.submit "リンク作成" ,class:"btn btn-secondary"%></li>
 </ul>
 <% end %>
+<%= form_with model:@tag, remote:true do |tag| %>
+  タグ追加<br>
+  <%= tag.text_field :name %>
+  <%= tag.submit "タグ作成" ,class:"btn btn-secondary"%>
+<%end%>

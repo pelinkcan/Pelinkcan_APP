@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2021_12_12_131340) do
   end
 
   create_table "tags", force: :cascade do |t|
+    t.integer "user_id"
     t.string "name"
     t.string "color"
     t.datetime "created_at", null: false

@@ -17,6 +17,19 @@
 
 //= require rails-ujs
 //= require activestorage
+//= require select2
 //= require turbolinks
+//= require jquery.turbolinks
+
+//= require_self
 //= require_tree .
 
+
+// tag_select クラスをつけたらSELCT2タグになるようにする
+$(document).ready(function() {
+  $('.tag_select').select2({
+    width: "100%",
+    placeholder: 'Please Select',
+    allowClear: true
+  });
+});
