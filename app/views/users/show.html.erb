@@ -12,7 +12,10 @@
 </header>
 <!---ここまで-->
 <main>
-   <div class="profile_image"><%= attachment_image_tag @user, :image, size: "400x400", fallback: "no_image.jpg"%></div>
+   <div class="profile_image" id="button">
+      <%= attachment_image_tag @user, :image, size: "300x300", fallback: "no_image.jpg"%>
+      <div class="btn" style="background-color:blue;"><%= link_to '画像を変更する',edit_user_path%></div>
+   </div>
    <div class="user_information">
       <ul>
          <!---テーブルタグ使う--->
@@ -25,4 +28,15 @@
          <li>
       </ul>
    </div>
+
+   <script>
+      document.getElementById("button").addEventListener("mouseover", function () {
+         document.querySelector(".btn").style.display = "block";
+
+      });
+
+      document.getElementById("button").addEventListener("mouseout", function () {
+         document.querySelector(".btn").style.display = "none";
+      });
+   </script>
 </main>

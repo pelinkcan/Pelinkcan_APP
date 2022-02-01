@@ -1,15 +1,20 @@
 <header class="container-fluid bg-light w-100">
     <div class="row">
-        <div class="header col-3">
+        <div class="header col-5">
             <%= link_to links_path do %>
             <%= image_tag 'pelinkcan.png' %>
             <% end %>
         </div>
-        <div class="header col-6">
-            <button type="button" class="btn btn-info"><%= link_to 'リンク作成',new_link_path %></button>
-        </div>
         <div class="header col-3">
-            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+            <%= link_to new_link_path do %>
+            <button type="button" class="btn btn-info">リンク作成</button>
+        </div>
+        <%end%>
+        <div class="header col-2">
+            <%= link_to 'log out', destroy_user_session_path, method: :delete %>
+        </div>
+        <div class="header col-2">
+            <%= link_to 'ユーザー', user_path(current_user)%>
         </div>
     </div>
 </header>
