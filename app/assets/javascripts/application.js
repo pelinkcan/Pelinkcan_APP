@@ -17,30 +17,19 @@
 
 //= require rails-ujs
 //= require activestorage
+//= require select2
 //= require turbolinks
+//= require jquery.turbolinks
+
+//= require_self
 //= require_tree .
 
-  // まずカラーピッカーの要素をcolorpickerという変数に入れる
-  const colorpicker = document.querySelector('.arrow-icon-color-selector');
 
-  // 次に、ピンの要素をarrowiconという変数に入れる
-  const arrowicon = document.getElementById('arrow-icon');
-
-  colorpicker.addEventListener('input', function(e) {  // カラーピッカーの入力値(inputの値)が変更されたら{}内の処理を実行する
-    arrowicon.style.color = e.target.value; // アイコンのCSSのcolorプロパティの値を右辺の値にする。右辺の値とはすなわち、カラーピッカーでの選択値である。
- });
- 
- 
- 
- var infoAry = [
-"本サイトのトップページです。"
-];
-
-function mOver(num,obj) {
-    document.getElementById(obj).innerHTML = infoAry[num];	
-    document.getElementById(obj).style.visibility = "visible";
-}
-
-function mOut(obj) {
-    document.getElementById(obj).style.visibility = "hidden";
-}
+// tag_select クラスをつけたらSELCT2タグになるようにする
+$(document).ready(function() {
+  $('.tag_select').select2({
+    width: "100%",
+    placeholder: 'Please Select',
+    allowClear: true
+  });
+});

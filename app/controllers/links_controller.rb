@@ -5,6 +5,10 @@ class LinksController < ApplicationController
     
     def new
       @link = Link.new
+      @linktag = LinkTag.new
+      @linktags = LinkTag.all
+      @tag = Tag.new #タグをユーザーに持たせるか
+      @tags = Tag.where(user_id: current_user)
     end
     
     def create
